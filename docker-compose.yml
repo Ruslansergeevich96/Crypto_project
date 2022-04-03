@@ -7,9 +7,9 @@ services:
     build: 
       context: .
     env_file:
-      - ./backend/.env
+      - ./server/.env
     volumes:
-      - .:/app
+      - .:/Crypto_project
       - /node_modules
     ports: 
       - 7200:7200
@@ -23,7 +23,7 @@ services:
     container_name: postgres
     image: postgres
     env_file:
-      - ./backend/.env
+      - ./server/.env
     environment:
       PG_DATA: /var/lib/postgresql/data
     ports:
