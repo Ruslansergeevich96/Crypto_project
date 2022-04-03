@@ -22,10 +22,9 @@ node_modules
 # на всех уровнях вложенности
 doc/**/*.txt
 
-Dockerfile
-docker-compose.yml
 package-lock.json
 node_modules
+notes.txt
 .env
 .DS_Store
 .idea
