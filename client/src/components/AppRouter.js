@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-import { Routes, Route, Redirect } from 'react-router-dom'
+import { Routes, Route, Navigate } from 'react-router-dom'
 import { authRoutes, publicRoutes } from '../routes';
+import { CRYPTOCURRENCIES_ROUTE } from '../utils/consts';
 
 const AppRouter = () => {
-  const isAuth = false
+  const isAuth = true
   return (
     <Routes>
       {isAuth && authRoutes.map(({path, Component}) => 
@@ -12,6 +13,7 @@ const AppRouter = () => {
       {publicRoutes.map(({path, Component}) => 
         <Route key={path} path={path} element={<Component /> } exact/>
       )}
+      <Route path="*" element={<Navigate to={CRYPTOCURRENCIES_ROUTE} />} />
     </Routes>
   );
 }

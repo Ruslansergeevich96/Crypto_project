@@ -26,7 +26,7 @@ export const publicRoutes = [
         Component: Auth
     },
     {
-        path: CRYPTOCURRENCIES_ROUTE + '/:id',
+        path: CRYPTOCURRENCIES_ROUTE,//+ '/:id'
         Component: Cryptocurrencies
     },
 ]
