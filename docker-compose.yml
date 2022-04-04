@@ -3,7 +3,7 @@ version: "3.8"
 services:
 
   main:
-    container_name: Cryptoforest 
+    container_name: cryptoforest 
     build: 
       context: .
     env_file:
