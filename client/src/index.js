@@ -2,8 +2,9 @@ import React, { createContext } from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
-import UserStore from './store/UserStore';
 import reportWebVitals from './reportWebVitals';
+import UserStore from './store/UserStore';
+import CryptocurrenciesStore from './store/CryptocurrenciesStore';
 
 export const Context = createContext(null)
 
@@ -11,7 +12,8 @@ const root = ReactDOM.createRoot(document.getElementById('root'))
 
 root.render(
     <Context.Provider value={{
-        user: new UserStore()
+        user: new UserStore(),
+        cryptocurrencies: new CryptocurrenciesStore(),
     }}>
         <App/>
     </Context.Provider>
