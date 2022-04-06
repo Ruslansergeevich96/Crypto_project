@@ -8,9 +8,6 @@ import { CRYPTOCURRENCIES_ROUTE } from '../utils/consts';
 import Button from 'react-bootstrap/Button'
 import { makeAutoObservable } from 'mobx-react-lite'
 
-constructor() {
-    makeObservable(this);
-  }
 
 const NavBar = () => {
     const {user} = useContext(Context)
