@@ -3,21 +3,37 @@ import { Context } from '..';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import Container from 'react-bootstrap/Container'
+import NavLink from 'react-bootstrap/esm/NavLink';
+import { CRYPTOCURRENCIES_ROUTE } from '../utils/consts';
+import Button from 'react-bootstrap/Button'
+import { makeAutoObservable } from 'mobx-react-lite'
+
+constructor() {
+    makeObservable(this);
+  }
 
 const NavBar = () => {
     const {user} = useContext(Context)
     return (
         <Navbar bg="dark" variant="dark">
             <Container>
-                <Navbar.Brand href="#home">Navbar</Navbar.Brand>
-                <Nav className="me-auto">
-                    <Nav.Link href="#home">Home</Nav.Link>
-                    <Nav.Link href="#features">Features</Nav.Link>
-                    <Nav.Link href="#pricing">Pricing</Nav.Link>
-                </Nav>
+                <NavLink style={{color: 'white'}} to={CRYPTOCURRENCIES_ROUTE}>Cryptoforest</NavLink>
+                {user.isAuth ?
+                    <Nav className="ml-auto" style={{color: 'white'}}>
+                        {/* <Nav.Link href="#home">Home</Nav.Link>
+                        <Nav.Link href="#features">Features</Nav.Link>
+                        <Nav.Link href="#pricing">Pricing</Nav.Link> */}
+                        <Button variant={"outline-light"}>Админ панель</Button>
+                        <Button variant={"outline-light"}>Войти</Button>
+                    </Nav>
+                    :
+                    <Nav className="ml-auto" style={{color: 'white'}}>
+                        <Button variant={"outline-light"}>Авторизация</Button>
+                    </Nav>   
+                }
             </Container>
         </Navbar>
     );
-}
+};
 
 export default NavBar;
