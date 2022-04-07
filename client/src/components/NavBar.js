@@ -9,7 +9,7 @@ import Button from 'react-bootstrap/Button'
 import { makeAutoObservable } from 'mobx-react-lite'
 
 
-const NavBar = () => {
+const NavBar = (,) => {
     const {user} = useContext(Context)
     return (
         <Navbar bg="dark" variant="dark">
