@@ -6,10 +6,10 @@ import Container from 'react-bootstrap/Container'
 import NavLink from 'react-bootstrap/esm/NavLink';
 import { CRYPTOCURRENCIES_ROUTE } from '../utils/consts';
 import Button from 'react-bootstrap/Button'
-import { makeAutoObservable } from 'mobx-react-lite'
+import { observer } from 'mobx-react-lite';
 
 
-const NavBar = () => {
+const NavBar = observer(() => {
     const {user} = useContext(Context)
     return (
         <Navbar bg="dark" variant="dark">
@@ -31,6 +31,6 @@ const NavBar = () => {
             </Container>
         </Navbar>
     );
-};
+})
 
 export default NavBar;
