@@ -1,3 +1,4 @@
+// FIXME: test
 import React, { useContext } from 'react';
 import { Context } from '..';
 import Navbar from 'react-bootstrap/Navbar';
@@ -7,7 +8,6 @@ import NavLink from 'react-bootstrap/esm/NavLink';
 import { CRYPTOCURRENCIES_ROUTE } from '../utils/consts';
 import Button from 'react-bootstrap/Button'
 import { observer } from 'mobx-react-lite';
-
 
 const NavBar = observer(() => {
     const {user} = useContext(Context)
@@ -25,7 +25,7 @@ const NavBar = observer(() => {
                     </Nav>
                     :
                     <Nav className="ml-auto" style={{color: 'white'}}>
-                        <Button variant={"outline-light"}>Авторизация</Button>
+                        <Button variant={"outline-light"} onClick={() => user.setIsAuth(true)}>Авторизация</Button>
                     </Nav>   
                 }
             </Container>
