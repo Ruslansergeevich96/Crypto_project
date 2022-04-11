@@ -21,7 +21,7 @@ const NavBar = observer(() => {
                         <Nav.Link href="#features">Features</Nav.Link>
                         <Nav.Link href="#pricing">Pricing</Nav.Link> */}
                         <Button variant={"outline-light"}>Админ панель</Button>
-                        <Button variant={"outline-light"}>Войти</Button>
+                        <Button variant={"outline-light"} className="ms-2">Войти</Button>
                     </Nav>
                     :
                     <Nav className="ml-auto" style={{color: 'white'}}>
