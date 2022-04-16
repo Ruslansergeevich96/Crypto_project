@@ -4,7 +4,7 @@ import { Context } from '..';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import Container from 'react-bootstrap/Container'
-import NavLink from 'react-bootstrap/esm/NavLink';
+import { NavLink } from 'react-router-dom';
 import { CRYPTOCURRENCIES_ROUTE } from '../utils/consts';
 import Button from 'react-bootstrap/Button'
 import { observer } from 'mobx-react-lite';
