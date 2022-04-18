@@ -3,9 +3,7 @@ import React, { useContext } from 'react';
 import { Context } from '..';
 import Nav from 'react-bootstrap/Nav';
 import Container from 'react-bootstrap/Container'
-import { NavLink } from 'react-router-dom';
-import { CRYPTOCURRENCIES_ROUTE } from '../utils/consts';
-import Button from 'react-bootstrap/Button'
+import { CRYPTOCURRENCIES_ROUTE, TRACKING_CRYPTOCURRENCIES_ROUTE } from '../utils/consts';
 import { observer } from 'mobx-react-lite';
 
 const LeftNavs = observer(() => {
@@ -15,6 +13,7 @@ const LeftNavs = observer(() => {
             {user.isAuth ?
             <Nav defaultActiveKey={CRYPTOCURRENCIES_ROUTE} className="flex-column">
                 <Nav.Link href={CRYPTOCURRENCIES_ROUTE}>Список Криптовалют</Nav.Link>
+                <Nav.Link href={TRACKING_CRYPTOCURRENCIES_ROUTE}>Отслеживание криптовалют</Nav.Link>
                 <Nav.Link eventKey="link-1">Link</Nav.Link>
                 <Nav.Link eventKey="link-2">Link</Nav.Link>
                 <Nav.Link eventKey="disabled" disabled>

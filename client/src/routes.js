@@ -1,9 +1,9 @@
 import Admin from "./pages/Admin"
-import Tracking from "./pages/Tracking"
+import Tracking from "./pages/Tracking_cryptocurrencies"
 import Cryptocurrencies from "./pages/Cryptocurrencies"
 import Auth from "./pages/Auth"
 
-import { ADMIN_ROUTE, CRYPTOCURRENCIES_ROUTE, LOGIN_ROUTE, REGISTRATION_ROUTE, TRACKING_ROUTE } from "./utils/consts"
+import { ADMIN_ROUTE, CRYPTOCURRENCIES_ROUTE, LOGIN_ROUTE, REGISTRATION_ROUTE, TRACKING_CRYPTOCURRENCIES_ROUTE } from "./utils/consts"
 
 export const authRoutes = [
     {
@@ -11,7 +11,7 @@ export const authRoutes = [
         Component: Admin
     },
     {
-        path: TRACKING_ROUTE,
+        path: TRACKING_CRYPTOCURRENCIES_ROUTE,
         Component: Tracking
     },
 ]
@@ -29,4 +29,10 @@ export const publicRoutes = [
         path: CRYPTOCURRENCIES_ROUTE,//+ '/:id'
         Component: Cryptocurrencies
     },
+    // FIXME: удалить после отладки
+    {
+        path: TRACKING_CRYPTOCURRENCIES_ROUTE,
+        Component: Tracking
+    },
+    //
 ]
