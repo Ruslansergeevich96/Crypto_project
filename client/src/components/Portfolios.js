@@ -1,7 +1,7 @@
 import { observable } from "mobx";
 import React, { useContext } from "react";
 import { Context } from "..";
-import ListGroup from "react-bootstrap/ListGroup"
+import ListGroup from "react-bootstrap/esm/ListGroup"
 
 const Portfolios = observable(() => {
     const {} = useContext(Context)
