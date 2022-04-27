@@ -14,8 +14,8 @@ const LeftNavs = observer(() => {
             <Nav defaultActiveKey={CRYPTOCURRENCIES_ROUTE} className="flex-column">
                 <Nav.Link href={CRYPTOCURRENCIES_ROUTE}>Список Криптовалют</Nav.Link>
                 <Nav.Link href={TRACKING_CRYPTOCURRENCIES_ROUTE}>Отслеживание криптовалют</Nav.Link>
-                <Nav.Link eventKey="link-1">Link</Nav.Link>
-                <Nav.Link eventKey="link-2">Link</Nav.Link>
+                <Nav.Link eventKey="link-1">Мои портфели (test)</Nav.Link>
+                <Nav.Link eventKey="link-2">Наши контакты (test)</Nav.Link>
                 <Nav.Link eventKey="disabled" disabled>
                     Disabled
                 </Nav.Link>
