@@ -1,29 +1,39 @@
-import React, { useState } from 'react';
-import { useLocation } from 'react-router-dom';
+import React, { useContext, useState } from 'react';
+import { NavLink, useLocation, useHistory } from 'react-router-dom';
 import Container from 'react-bootstrap/esm/Container';
 import Card from 'react-bootstrap/esm/Card';
 import Form from 'react-bootstrap/esm/Form';
 import Button from 'react-bootstrap/esm/Button';
 import Row from 'react-bootstrap/esm/Row'
-import { NavLink } from 'react-router-dom';
-import { LOGIN_ROUTE, REGISTRATION_ROUTE } from '../utils/consts';
-import { login, registrtation } from '../http/userAPI';
+import { LOGIN_ROUTE, REGISTRATION_ROUTE, CRYPTOCURRENCIES_ROUTE } from '../utils/consts';
+import { login, registration } from '../http/userAPI';
+import { observer } from 'mobx-react-lite';
+import { Context } from '../index';
 
 
 
 
-const Auth = () => {
+const Auth = observer(() => {
+  const {user} = useContext(Context)
   const location = useLocation()
+  const history = useHistory()
   const isLogin = location.pathname === LOGIN_ROUTE
-  const [email, setEmail] = useState()
-  const [password, setPassword] = useState()
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
 
   const click =  async () => {
-    if (isLogin) {
-        const response = await login()
-    } else {
-        const response = await registrtation(email,password);
-        console.log(response)
+    try {
+        let data;
+        if (isLogin) {
+            data = await login(email, password);
+        } else {
+            data = await registration(email, password);
+        }
+        user.setUser(user)
+        user.setAuth(true)
+        history.push(CRYPTOCURRENCIES_ROUTE)
+    } catch (e) {
+        alert(e.response.data.message)
     }
   }
 
@@ -69,6 +79,6 @@ const Auth = () => {
       </Card>
     </Container>
   );
-}
+});
 
 export default Auth;
