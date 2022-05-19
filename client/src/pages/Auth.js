@@ -46,6 +46,7 @@ const Auth = () => {
               placeholder='Введите ваш пароль...'
               value={password}
               onChange = {e => setPassword(e.target.value)}
+              type = "password"
             />
             <Row className="d-flex justify-content-between mt-4 pl-3 pr-3">
               {isLogin ?

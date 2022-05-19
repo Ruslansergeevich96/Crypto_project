@@ -1,7 +1,7 @@
 import { $authHost, $host } from "./index";
 
 export const registrtation = async (email, passsword) => {
-    const response = await $host.post('api/auth/registration', {email, passsword, role: 'ADMIN'})
+    const response = await $host.post('api/user/registration', {email, passsword, role: 'ADMIN'})
     return response
 }
 
