@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { NavLink, useLocation, useHistory } from 'react-router-dom';
+import { NavLink, useLocation, useNavigate } from 'react-router-dom';
 import Container from 'react-bootstrap/esm/Container';
 import Card from 'react-bootstrap/esm/Card';
 import Form from 'react-bootstrap/esm/Form';
@@ -16,7 +16,7 @@ import { Context } from '../index';
 const Auth = observer(() => {
   const {user} = useContext(Context)
   const location = useLocation()
-  const history = useHistory()
+  const navigate = useNavigate()
   const isLogin = location.pathname === LOGIN_ROUTE
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
@@ -31,7 +31,7 @@ const Auth = observer(() => {
         }
         user.setUser(user)
         user.setAuth(true)
-        history.push(CRYPTOCURRENCIES_ROUTE)
+        navigate.push(CRYPTOCURRENCIES_ROUTE)
     } catch (e) {
         alert(e.response.data.message)
     }
