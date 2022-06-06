@@ -29,10 +29,4 @@ export const publicRoutes = [
         path: CRYPTOCURRENCIES_ROUTE,//+ '/:id'
         Component: Cryptocurrencies
     },
-    // FIXME: удалить после отладки
-    {
-        path: TRACKING_CRYPTOCURRENCIES_ROUTE,
-        Component: Tracking
-    },
-    //
 ]
