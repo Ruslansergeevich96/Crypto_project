@@ -5,7 +5,7 @@ import Card from 'react-bootstrap/esm/Card';
 import Form from 'react-bootstrap/esm/Form';
 import Button from 'react-bootstrap/esm/Button';
 import Row from 'react-bootstrap/esm/Row'
-import { LOGIN_ROUTE, REGISTRATION_ROUTE, CRYPTOCURRENCIES_ROUTE, TRACKING_CRYPTOCURRENCIES_ROUTE} from '../utils/consts';
+import { LOGIN_ROUTE, REGISTRATION_ROUTE, CRYPTOCURRENCIES_ROUTE} from '../utils/consts';
 import { login, registration } from '../http/userAPI';
 import { observer } from 'mobx-react-lite';
 import { Context } from '../index';
@@ -30,8 +30,8 @@ const Auth = observer(() => {
             data = await registration(email, password);
         }
         user.setUser(user)
-        user.setAuth(true)
-        navigate(TRACKING_CRYPTOCURRENCIES_ROUTE)
+        user.setIsAuth(true)
+        navigate(CRYPTOCURRENCIES_ROUTE)
     } catch (e) {
         alert(e.response.data.message)
     }
