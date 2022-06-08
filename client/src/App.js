@@ -2,7 +2,7 @@ import { observer } from 'mobx-react-lite';
 import React, { useContext, useEffect, useState } from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import { Context } from '.';
-import { check } from '../../server/controllers/userController';
+import { check } from './http/userAPI';
 import AppRouter from './components/AppRouter';
 import LeftNavs from './components/LeftNavs';
 import NavBar from './components/NavBar';
