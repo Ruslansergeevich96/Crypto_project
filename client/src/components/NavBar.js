@@ -4,13 +4,20 @@ import { Context } from '..';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import Container from 'react-bootstrap/Container'
-import { NavLink } from 'react-router-dom';
-import { CRYPTOCURRENCIES_ROUTE } from '../utils/consts';
+import { NavLink, useNavigate } from 'react-router-dom';
+import { CRYPTOCURRENCIES_ROUTE, ADMIN_ROUTE, LOGIN_ROUTE } from '../utils/consts';
 import Button from 'react-bootstrap/Button'
 import { observer } from 'mobx-react-lite';
 
 const NavBar = observer(() => {
     const {user} = useContext(Context)
+    const navigate = useNavigate()
+
+    const logOut  = () => {
+        user.setUser({})
+        user.setIsAuth(false)
+    }
+
     return (
         <Navbar bg="dark" variant="dark">
             <Container>
@@ -20,12 +27,28 @@ const NavBar = observer(() => {
                         {/* <Nav.Link href="#home">Home</Nav.Link>
                         <Nav.Link href="#features">Features</Nav.Link>
                         <Nav.Link href="#pricing">Pricing</Nav.Link> */}
-                        <Button variant={"outline-light"}>Админ панель</Button>
-                        <Button variant={"outline-light"} className="ms-2">Войти</Button>
+                        <Button 
+                            variant={"outline-light"}
+                            onClick={() => navigate(ADMIN_ROUTE)}
+                        >
+                            Админ панель
+                        </Button>
+                        <Button 
+                            variant={"outline-light"} 
+                            onClick={() => logOut()}
+                            className="ms-2"
+                        >
+                            Выйти
+                        </Button>
                     </Nav>
                     :
                     <Nav className="ml-auto" style={{color: 'white'}}>
-                        <Button variant={"outline-light"} onClick={() => user.setIsAuth(true)}>Авторизация</Button>
+                        <Button 
+                            variant={"outline-light"} 
+                            onClick={() => navigate(LOGIN_ROUTE)}
+                        >
+                            Авторизация
+                        </Button>
                     </Nav>   
                 }
             </Container>
