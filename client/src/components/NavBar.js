@@ -5,7 +5,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import Container from 'react-bootstrap/Container'
 import { NavLink, useNavigate } from 'react-router-dom';
-import { CRYPTOCURRENCIES_ROUTE, ADMIN_ROUTE, LOGIN_ROUTE } from '../utils/consts';
+import { MAIN, ADMIN_ROUTE, LOGIN_ROUTE } from '../utils/consts';
 import Button from 'react-bootstrap/Button'
 import { observer } from 'mobx-react-lite';
 
@@ -21,7 +21,7 @@ const NavBar = observer(() => {
     return (
         <Navbar bg="dark" variant="dark">
             <Container>
-                <NavLink style={{color: 'white'}} to={CRYPTOCURRENCIES_ROUTE}>Cryptoforest</NavLink>
+                <NavLink style={{color: 'white'}} to={MAIN}>Cryptoforest</NavLink>
                 {user.isAuth ?
                     <Nav className="ml-auto" style={{color: 'white'}}>
                         {/* <Nav.Link href="#home">Home</Nav.Link>

@@ -2,8 +2,9 @@ import Admin from "./pages/Admin"
 import Tracking from "./pages/Tracking_cryptocurrencies"
 import Cryptocurrencies from "./pages/Cryptocurrencies"
 import Auth from "./pages/Auth"
+import Main from "./pages/Main"
 
-import { ADMIN_ROUTE, CRYPTOCURRENCIES_ROUTE, LOGIN_ROUTE, REGISTRATION_ROUTE, TRACKING_CRYPTOCURRENCIES_ROUTE } from "./utils/consts"
+import { ADMIN_ROUTE, CRYPTOCURRENCIES_ROUTE, LOGIN_ROUTE, MAIN, REGISTRATION_ROUTE, TRACKING_CRYPTOCURRENCIES_ROUTE } from "./utils/consts"
 
 export const authRoutes = [
     {
@@ -28,5 +29,9 @@ export const publicRoutes = [
     {
         path: CRYPTOCURRENCIES_ROUTE,//+ '/:id'
         Component: Cryptocurrencies
+    },
+    {
+        path: MAIN,
+        Component: Main
     },
 ]
