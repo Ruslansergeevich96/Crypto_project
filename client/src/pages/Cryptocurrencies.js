@@ -4,16 +4,11 @@ import Col from 'react-bootstrap/esm/Col';
 import Container from 'react-bootstrap/esm/Container';
 import Row from 'react-bootstrap/esm/Row';
 import { Context } from '..';
-import { fetchCryptocurrencies } from '../http/cryptoAPI';
-import CryptocurrenciesList from '../components/CryptocurrenciesList';
+
 
 
 const Cryptocurrencies = observer(() => {
   const {cryptoitem} = useContext(Context)
-
-  useEffect(() => {
-    fetchCryptocurrencies().then(data => cryptocurrencies.setCryptocurrencies(data))
-  }, [])
 
   return (
     <Container>
@@ -24,7 +19,6 @@ const Cryptocurrencies = observer(() => {
             </Col>
             <Col md = {9}>
               Kрипта
-              <CryptocurrenciesList/>
             </Col>
         </Row>
     </Container>
