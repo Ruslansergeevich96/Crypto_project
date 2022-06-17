@@ -5,7 +5,7 @@ const cryptocurrenciesRouter = require('./cryptocurrenciesRouter')
 const userRouter = require('./userRouter')
 
 router.use('/user', userRouter)
-router.use('/tracking_cryptocurrencies', tracking_cryptocurrenciesRouter)
+router.use('/tracking', tracking_cryptocurrenciesRouter)
 router.use('/cryptocurrencies', cryptocurrenciesRouter)
 
 module.exports = router

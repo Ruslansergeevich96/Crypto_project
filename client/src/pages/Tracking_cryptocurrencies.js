@@ -1,10 +1,18 @@
-import React from 'react';
+import { observer } from 'mobx-react-lite';
+import React, { useContext, useEffect } from 'react';
 import Col from 'react-bootstrap/esm/Col';
 import Container from 'react-bootstrap/esm/Container';
 import Row from 'react-bootstrap/esm/Row';
+import { Context } from '..';
 
 
-const Tracking_cryptocurrencies = () => {
+const Tracking_cryptocurrencies = observer(() => {
+  const {tracking} = useContext(Context)
+
+  // useEffect(() => {
+  //   fetchPortfolios().then(data => tracking.setPortfolios(data))
+  // }, [])
+
   return (
     <Container>
         <Row className='mt-2'>
@@ -28,6 +36,6 @@ const Tracking_cryptocurrencies = () => {
         </Row>
     </Container>
   );
-}
+});
 
 export default Tracking_cryptocurrencies;
