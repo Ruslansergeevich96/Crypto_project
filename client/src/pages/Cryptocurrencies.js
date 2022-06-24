@@ -15,10 +15,12 @@ const Cryptocurrencies = observer(() => {
         <Row className='mt-2'>
             <Col md = {3}>
               {/* <Cryptocurrencies /> */}
-              Портфель
+              Страница крипты 
             </Col>
             <Col md = {9}>
-              Kрипта
+              Тут вся крипта 
+              Тут вся крипта
+              Тут вся крипта
             </Col>
         </Row>
     </Container>
