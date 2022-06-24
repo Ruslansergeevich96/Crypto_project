@@ -4,7 +4,7 @@ import Col from 'react-bootstrap/esm/Col';
 import Container from 'react-bootstrap/esm/Container';
 import Row from 'react-bootstrap/esm/Row';
 import { Context } from '..';
-import Portfolios from "../components/Portfolios";
+import PortfoliosBar from "../components/PortfoliosBar";
 
 
 const Tracking_cryptocurrencies = observer(() => {
@@ -18,7 +18,7 @@ const Tracking_cryptocurrencies = observer(() => {
     <Container>
         <Row className='mt-2'>
             <Col md = {3}>
-              <Portfolios />
+              <PortfoliosBar />
               {/* Портфель_1
               портфель_2
               портфель_3

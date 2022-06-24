@@ -5,6 +5,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import UserStore from './store/UserStore';
 import CryptocurrenciesStore from './store/CryptocurrenciesStore';
+import TrackingPortfolios from './store/TrackingPortfolios';
 
 export const Context = createContext(null)
 
@@ -14,6 +15,7 @@ root.render(
     <Context.Provider value={{
         user: new UserStore(),
         cryptocurrencies: new CryptocurrenciesStore(),
+        portfolio: new TrackingPortfolios(),
     }}>
         <App/>
     </Context.Provider>
