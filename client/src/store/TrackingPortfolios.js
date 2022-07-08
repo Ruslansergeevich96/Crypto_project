@@ -8,20 +8,23 @@ export default class TrackingPortfolios {
             {id: 3, name: 'Portfolios3', price: 3000, },
             {id: 4, name: 'Rabotaet', price: 3000, },
         ]
-        this._selectedType = {}
+        this._selectedPortfolios = {}
 
         makeAutoObservable(this)
     }
 
-    SetAllPortfolios(allPortfolios) {
+    setAllPortfolios(allPortfolios) {
         this._allPortfolios = allPortfolios
     }
 
-    setSelectedType() {
-        
+    setSelectedPortfolios(portfolios) {
+        this._selectedPortfolios = portfolios
     }
 
     get allPortfolios() {
         return this._allPortfolios
+    }
+    get selectedPortfolios() {
+        return this._selectedPortfolios
     }
 }

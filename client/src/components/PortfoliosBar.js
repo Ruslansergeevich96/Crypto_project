@@ -8,7 +8,12 @@ const PortfoliosBar = observer(() => {
     return (
         <ListGroup>
             {portfolio.allPortfolios.map(type =>
-                <ListGroup.Item key = {type.id}>
+                <ListGroup.Item 
+                    style={{cursor: 'pointer'}}
+                    active = {type.id === portfolio.selectedPortfolios.id}
+                    onClick={() => portfolio.setSelectedPortfolios (type)}
+                    key = {type.id}
+                >
                     {type.name}
                 </ListGroup.Item>
             )}
