@@ -8,8 +8,6 @@ import LeftNavs from './components/LeftNavs';
 import NavBar from './components/NavBar';
 import { Spinner } from "react-bootstrap";
 
-
-
 const App = observer( () => {
   const {user} = useContext(Context)
   const [loading, setLoading] = useState(true)
