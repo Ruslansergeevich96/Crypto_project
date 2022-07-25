@@ -1,8 +1,8 @@
 import { observer } from 'mobx-react-lite';
 import React, { useContext, useEffect, useState } from 'react';
 import Col from 'react-bootstrap/esm/Col';
-import Container from 'react-bootstrap/esm/Container';
-import Row from 'react-bootstrap/esm/Row';
+// import Form from 'react-bootstrap/esm/Form';
+// import Button from 'react-bootstrap/esm/Button';
 import { Context } from '..';
 import axios from 'axios'
 
@@ -23,28 +23,25 @@ const Cryptocurrencies = observer(() => {
   }, []);
 
   return (
-    <div className='cryptocurrencies'
+    <div className='cryptocurrencies'>
       <div className='coin-search'>
         <h1 className='coin-text'> Search a currancy</h1>
         <form>
           <input type='text' placeholder='Search' className='coin-input'/>
         </form>
       </div>
+      
     </div>
 
-    <Container>
-        <Row className='mt-2'>
-            <Col md = {3}>
-              {/* <Cryptocurrencies /> */}
-              Страница крипты 
-            </Col>
-            <Col md = {9}>
-              Тут вся крипта 
-              Тут вся крипта
-              Тут вся крипта
-            </Col>
-        </Row>
-    </Container>
+    //<Form className="d-flex">
+    //  <Form.Control
+    //   type="search"
+    //   placeholder="Search"
+    //   className="me-2"
+    //   aria-label="Search"
+    //  />
+    //    <Button variant="outline-success">Search</Button>
+    //</Form>
   );
 });
 
