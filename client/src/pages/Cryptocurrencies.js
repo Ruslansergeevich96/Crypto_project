@@ -1,11 +1,11 @@
 import { observer } from 'mobx-react-lite';
 import React, { useContext, useEffect, useState } from 'react';
-import Col from 'react-bootstrap/esm/Col';
+//import Col from 'react-bootstrap/esm/Col';
 // import Form from 'react-bootstrap/esm/Form';
 // import Button from 'react-bootstrap/esm/Button';
 import { Context } from '..';
 import axios from 'axios'
-import { combineTableNames } from 'sequelize/types/utils';
+import Coin from '../components/Coin';
 
 
 const Cryptocurrencies = observer(() => {
@@ -41,7 +41,19 @@ const Cryptocurrencies = observer(() => {
           className='coin-input' onChange={handleChange}/>
         </form>
       </div>
-      
+      {filteredCoins.map(coin => {
+        return (
+          <Coin
+            key={coin.id}
+            name={coin.name}
+            image={coin.image}
+            symbol={coin.symbol}
+            volume={coin.market_cap}
+            price={coin.current_price}
+            priceChange={coin.price_change_percentage_24h}
+          />
+        )
+      })}
     </div>
 
     //<Form className="d-flex">
