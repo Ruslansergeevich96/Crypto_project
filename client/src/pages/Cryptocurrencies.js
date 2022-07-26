@@ -5,11 +5,13 @@ import Col from 'react-bootstrap/esm/Col';
 // import Button from 'react-bootstrap/esm/Button';
 import { Context } from '..';
 import axios from 'axios'
+import { combineTableNames } from 'sequelize/types/utils';
 
 
 const Cryptocurrencies = observer(() => {
   const {cryptoitem} = useContext(Context)
-  const [coins, setCoins] = useState ([])
+  const [coins, setCoins] = useState ([]);
+  const [search, setSearch] = useState('');
 
   useEffect(() => {
     axios
@@ -22,12 +24,21 @@ const Cryptocurrencies = observer(() => {
       .catch(error => console.log(error));
   }, []);
 
+  const handleChange = e => {
+    setSearch(e.target.value)
+  }
+
+  const filteredCoins = coins.filter(coin => 
+    coin.name.toLowerCase().includes(search.toLowerCase())
+    )
+
   return (
     <div className='cryptocurrencies'>
       <div className='coin-search'>
         <h1 className='coin-text'> Search a currancy</h1>
         <form>
-          <input type='text' placeholder='Search' className='coin-input'/>
+          <input type='text' placeholder='Search' 
+          className='coin-input' onChange={handleChange}/>
         </form>
       </div>
       
