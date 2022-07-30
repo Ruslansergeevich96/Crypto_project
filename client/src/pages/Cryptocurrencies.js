@@ -6,6 +6,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { Context } from '..';
 import axios from 'axios'
 import Coin from '../components/Coin';
+import '../App.css';
 
 
 const Cryptocurrencies = observer(() => {
