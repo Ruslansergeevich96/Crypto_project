@@ -1,3 +1,7 @@
+.cryptocurrencies {
+    background-color: #1a1a1c;
+    color: #fff;
+}
 .coin-container {
     display: flex;
     justify-content: center;
