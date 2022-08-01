@@ -6,6 +6,7 @@ import { check } from './http/userAPI';
 import AppRouter from './components/AppRouter';
 import LeftNavs from './components/LeftNavs';
 import NavBar from './components/NavBar';
+import Modal from './components/Modal/Modal';
 import { Spinner } from "react-bootstrap";
 import './App.css';
 
@@ -29,6 +30,7 @@ const App = observer( () => {
       <NavBar />
       <LeftNavs />
       <AppRouter />
+      <Modal />
       WORKING APP.JS
     </BrowserRouter>
   );
