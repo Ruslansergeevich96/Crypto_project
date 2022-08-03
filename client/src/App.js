@@ -31,6 +31,7 @@ const App = observer( () => {
       <LeftNavs />
       <AppRouter />
       <Modal />
+      <button> Modal </button>
       WORKING APP.JS
     </BrowserRouter>
   );
