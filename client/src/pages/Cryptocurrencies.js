@@ -6,7 +6,6 @@ import React, { useContext, useEffect, useState } from 'react';
 import { Context } from '..';
 import axios from 'axios'
 import Coin from '../components/Coin';
-import '../App.css';
 
 
 const Cryptocurrencies = observer(() => {
@@ -36,9 +35,9 @@ const Cryptocurrencies = observer(() => {
   return (
     <div className='cryptocurrencies'>
       <div className='coin-search'>
-        <h1 className='coin-text'> Search a currancy</h1>
+        <h1 className='coin-text'> Список криптовалюты</h1>
         <form>
-          <input type='text' placeholder='Search' 
+          <input type='text' placeholder='Поиск' 
           className='coin-input' onChange={handleChange}/>
         </form>
       </div>
