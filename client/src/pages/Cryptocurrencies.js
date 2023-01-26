@@ -35,7 +35,7 @@ const Cryptocurrencies = observer(() => {
   return (
     <div className='cryptocurrencies'>
       <div className='coin-search'>
-        <h1 className='coin-text'> Список криптовалюты</h1>
+        <h1 className='coin-text'> Список криптовалют</h1>
         <form>
           <input type='text' placeholder='Поиск' 
           className='coin-input' onChange={handleChange}/>
